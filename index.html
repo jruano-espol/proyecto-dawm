@@ -37,7 +37,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body>
-    <header class="fixed w-full">
+    <header class="fixed w-full z-50">
         <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="#" class="flex items-center">
@@ -48,17 +48,19 @@
                 <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white" aria-current="page">Inicio</a>
+                            <a href="#inicio" class="scroll-link block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white" aria-current="page">Inicio</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple
-                            -700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Empresa</a>
+                            <a href="#empresa" class="scroll-link block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Empresa</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Productos</a>
+                            <a href="#productos" class="scroll-link block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Productos</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contacto</a>
+                            <a href="#contacto" class="scroll-link block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="#envios" class="scroll-link block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Envíos</a>
                         </li>
                     </ul>
                 </div>
@@ -66,8 +68,8 @@
         </nav>
     </header>
 
-    <!-- Start block -->
-    <section class="bg-white dark:bg-gray-900">
+    <!-- Sección Inicio -->
+    <section id="inicio" class="bg-white dark:bg-gray-900 scroll-mt-20">
         <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">Información Corporativa de Prominomet S.A.</h1>
@@ -84,9 +86,8 @@
             </div>                
         </div>
     </section>
-    <!-- End block -->
-    <!-- Start block -->
-    <section class="bg-gray-50 dark:bg-gray-800">
+    <!-- Sección Empresa -->
+    <section id="empresa" class="bg-gray-50 dark:bg-gray-800 scroll-mt-20">
         <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
@@ -143,7 +144,72 @@
             </div>
         </div>
       </section>
-    <!-- End block -->
+    <!-- Sección Productos -->
+    <section id="productos" class="bg-white dark:bg-gray-900 scroll-mt-20">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto">
+            <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Nuestros Productos</h2>
+            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+                <li>Carbonato de calcio molido</li>
+                <li>Diferentes granulometrías para construcción, plásticos, agroindustria, papel y alimentación animal</li>
+            </ul>
+        </div>
+    </section>
+    <!-- Sección Contacto -->
+    <section id="contacto" class="bg-gray-50 dark:bg-gray-800 scroll-mt-20">
+        <div class="max-w-screen-md mx-auto px-4 py-12">
+            <h2 class="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Formulario de Contacto</h2>
+            <form id="form-contacto" class="space-y-6 bg-white dark:bg-gray-900 p-6 rounded shadow">
+                <div>
+                    <label for="correo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                </div>
+                <div>
+                    <label for="motivo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Motivo</label>
+                    <select id="motivo" name="motivo" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                        <option value="">Seleccione un motivo</option>
+                        <option value="Consulta">Consulta</option>
+                        <option value="Cotización">Cotización</option>
+                        <option value="Soporte">Soporte</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Enviar</button>
+            </form>
+            <div id="mensaje-exito" class="hidden mt-4 text-green-600 dark:text-green-400">¡Formulario enviado!</div>
+        </div>
+    </section>
+    <!-- Sección Interacción con datos -->
+    <section id="envios" class="bg-white dark:bg-gray-900 scroll-mt-20">
+        <div class="max-w-screen-md mx-auto px-4 py-12">
+            <h2 class="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Cantidad de envíos por motivo</h2>
+            <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b dark:border-gray-700">Motivo</th>
+                        <th class="py-2 px-4 border-b dark:border-gray-700">Cantidad de envíos</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-envios">
+                    <tr>
+                        <td class="py-2 px-4 border-b dark:border-gray-700">Consulta</td>
+                        <td class="py-2 px-4 border-b dark:border-gray-700" id="envio-consulta">0</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b dark:border-gray-700">Cotización</td>
+                        <td class="py-2 px-4 border-b dark:border-gray-700" id="envio-cotizacion">0</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b dark:border-gray-700">Soporte</td>
+                        <td class="py-2 px-4 border-b dark:border-gray-700" id="envio-soporte">0</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b dark:border-gray-700">Otro</td>
+                        <td class="py-2 px-4 border-b dark:border-gray-700" id="envio-otro">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     <footer class="bg-white dark:bg-gray-800">
         <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
             <div class="text-center">
@@ -156,5 +222,6 @@
         </div>
     </footer>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="./file01.js"></script>
 </body>
 </html>
