@@ -5,5 +5,5 @@ npm install
 
 Para probar el código hacer lo siguiente:
 ```
-npx http-server .
+npm run dev
 ```
