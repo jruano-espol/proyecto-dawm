@@ -1,50 +1,41 @@
-// import { db } from './firebase.js';
-// import { doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+import { obtenerContador, guardarEnvio } from './firebase.js';
 
-// const motivos = ['consulta', 'cotizacion', 'soporte', 'otro'];
+const motivos = ['consulta', 'cotizacion', 'soporte', 'otro'];
 
-// // Load counts from Firestore and update table
-// async function cargarEnvios() {
-//     const docRef = doc(db, "envios", "contador");
-//     const docSnap = await getDoc(docRef);
-//     let data = docSnap.exists() 
-//         ? docSnap.data() 
-//         : {};
-//     console.log("Firestore data:", data);
-//     motivos.forEach(motivo => {
-//         document.getElementById(`envio-${motivo}`).textContent = data[motivo] || 0;
-//     });
-// }
+// Cargar los conteos desde Realtime Database y actualizar la tabla
+async function cargarEnvios() {
+    try {
+        for (const motivo of motivos) {
+            const cantidad = await obtenerContador(motivo);
+            document.getElementById(`envio-${motivo}`).textContent = cantidad;
+        }
+    } catch (error) {
+        console.error("Error al cargar envíos:", error);
+    }
+}
 
-// // Increment count in Firestore
-// async function incrementarEnvio(motivo) {
-//     const docRef = doc(db, "envios", "contador");
-//     // Ensure the document exists
-//     await setDoc(docRef, {}, { merge: true });
-//     await updateDoc(docRef, { [motivo]: increment(1) });
-// }
+// Manejo del formulario
+document.addEventListener('DOMContentLoaded', () => {
+    cargarEnvios();
 
-// // Form handling
-// document.addEventListener('DOMContentLoaded', () => {
-//     cargarEnvios();
+    const form = document.getElementById('form-contacto');
+    const mensajeExito = document.getElementById('mensaje-exito');
 
-//     const form = document.getElementById('form-contacto');
-//     const mensajeExito = document.getElementById('mensaje-exito');
-//     form.addEventListener('submit', async (e) => {
-//         e.preventDefault();
-//         const motivo = form.motivo.value;
-//         if (motivos.includes(motivo)) {
-//             await incrementarEnvio(motivo);
-//             await cargarEnvios();
-//         }
-//         form.reset();
-//         mensajeExito.classList.remove('hidden');
-//         setTimeout(() => mensajeExito.classList.add('hidden'), 3000);
-//     });
-// });
-
-// Old
-// -------------------------------------------------------------------- //
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const motivo = form.motivo.value;
+        if (motivos.includes(motivo)) {
+            await guardarEnvio(motivo);
+            await cargarEnvios();
+        } else {
+            console.error("Motivo no válido:", motivo);
+            return;
+        }
+        form.reset();
+        mensajeExito.classList.remove('hidden');
+        setTimeout(() => mensajeExito.classList.add('hidden'), 3000);
+    });
+});
 
 // Menú scroll suave
 document.querySelectorAll('.scroll-link').forEach(link => {
@@ -55,29 +46,4 @@ document.querySelectorAll('.scroll-link').forEach(link => {
             document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
         }
     });
-});
-
-// Lógica formulario y tabla de envíos
-const envios = {
-    Consulta: 0,
-    Cotización: 0,
-    Soporte: 0,
-    Otro: 0
-};
-
-document.getElementById('form-contacto').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const motivo = document.getElementById('motivo').value;
-    if (motivo && envios.hasOwnProperty(motivo)) {
-        envios[motivo]++;
-        document.getElementById('envio-consulta').textContent = envios['Consulta'];
-        document.getElementById('envio-cotizacion').textContent = envios['Cotización'];
-        document.getElementById('envio-soporte').textContent = envios['Soporte'];
-        document.getElementById('envio-otro').textContent = envios['Otro'];
-        document.getElementById('mensaje-exito').classList.remove('hidden');
-        setTimeout(() => {
-            document.getElementById('mensaje-exito').classList.add('hidden');
-        }, 2000);
-        this.reset();
-    }
 });
